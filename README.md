@@ -357,6 +357,44 @@ Starting MySQL (Percona Server)
 ```
 So, I cancelled, and followed the ubuntu one as provided. Will try with own image later.
 
+**Lets delete the 3GB image**
+
+```
+$ docker rmi 099d247497ad
+Error response from daemon: conflict: unable to delete 099d247497ad (must be forced) - image is being used by stopped container a3a7bbd10bbe
+
+$ docker rm -f a3a7bbd10bbe
+a3a7bbd10bbe
+
+$ docker rmi 099d247497ad
+Untagged: qwerty199369/nginx-php-mysql-redis:1.1.4
+Untagged: qwerty199369/nginx-php-mysql-redis@sha256:b08c5cf201bd708a599b1c686a9114c0231b759cb77bae873448a3acd34aeb13
+Deleted: sha256:099d247497ad070904c7c21c3007a1652913be2d6885355f7289f9672f073306
+Deleted: sha256:e084d6ecc305623de5c84aae46c4d649bfcc29ea4b1811ea88e0f073b83cf78c
+Deleted: sha256:9b83a539f429f713aeb0a435baf009d1cc7693d0cfc2a95413acbda8e310f8dc
+Deleted: sha256:ad0c09116cafbd42eb65339f07c9814d4acd66e73f4bf35a0a84f305ad31ba01
+Deleted: sha256:5334d385f7b947ca7a7974788a49dc70e6346b60d8a8e9572e63bf508b94b8de
+Deleted: sha256:86f01108df168ab5cc09e6851debb3c8b71acfe7e9dbe238d445d5848ed5fd6b
+Deleted: sha256:f006367e453579872a1589068819efa3f0a673726d5ffc9fb440f34dde73da59
+Deleted: sha256:9a96a498fc3d8e19c02ec0916d32653aef958b01e9afed42886448fd37ab1aa7
+Deleted: sha256:3df362b96781fe6cb6bf36844ce58e22d22c7b21638f99fa9bdb5307006c890d
+Deleted: sha256:33838cc1ea6cbebafd26b863028fd86c301ba1b206a6befc22aa0944e013368f
+Deleted: sha256:00194d20792bccae2d524457ff7063455d8f5f2c406342a2f5f4a473c1c67def
+Deleted: sha256:e1d74c74d4cf7ca6afc43bf90adfca1211119c3ce28b6d3a2356f60386c4b87d
+Deleted: sha256:6f93dc6efe7c0399da9527dc3fafb95a55c36ebc6fc0d02b41e97cd0f0be7b5b
+Deleted: sha256:08f29b3d2fa8865a3a64b7d0a29eca8fbc07a2ffdf451ef81e02a919848c8604
+Deleted: sha256:8bbc3b474e1322b8c38c0888c1f5a7272c1f93712495e929a5bc1e4302a6ddce
+Deleted: sha256:6c051a29e1326241964ebd30dada3f4dadd26ae1c4fb122a708655d116b9ceac
+Deleted: sha256:fe33d1f36efd1d7965e94f28f69f89834293a985069027e72d7aaf47ef757662
+Deleted: sha256:e49c10d52a57d0cdd0b056ab1466948f6098fd73cba650a222c8be6456974208
+Deleted: sha256:733fd966395da1d275e0c6d38736decc590c90e65134f20e0117e72171484947
+Deleted: sha256:ef5b99eed7c2ed19ef39f72ac19bb66e16ed6c0868053daae60306a73858fbd4
+Deleted: sha256:257e51479af1e9d2e0c9b958e68f6b992329904df24d81efa191cef515a9bf8b
+Deleted: sha256:6e1d2d371500e2fe6df75f5755d0b9f2a3b69a42fe88100d514212bbba7ad23f
+Deleted: sha256:afa9e7a5e3f3b006942d128c562a3273947c7ab50cdac33fea7213890072a5b6
+Deleted: sha256:2df9b8def18a090592bf1cbd1079e1ac2274435c53f027ee5ce0a8faaa5d6d4b
+```
+
 
 Note the container id in the command prompt. In this example, it is ```d9b100f2f636```. You’ll need that container ID later to identify the container when you want to remove it.
 
