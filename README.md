@@ -269,7 +269,36 @@ Digest: sha256:747d2dbbaaee995098c9792d99bd333c6783ce56150d1b11e333bbceed5c54d7
 Status: Downloaded newer image for ubuntu:latest
 docker.io/library/ubuntu:latest
 ```
+I did this
 
+```
+$ docker pull qwerty199369/nginx-php-mysql-redis:1.1.4
+```
+And you will see the output as:
+```
+1.1.4: Pulling from qwerty199369/nginx-php-mysql-redis
+594cf71eb8ba: Pull complete
+3b5244e3179b: Pull complete
+37a19d5c10ab: Pull complete
+d9e6649d6df2: Pull complete
+2b401702069a: Pull complete
+4f4fb700ef54: Pull complete
+eae027dcdc0e: Pull complete
+9f92b353dafc: Pull complete
+31e4a09cb0b7: Pull complete
+b2ac253feffe: Pull complete
+d24eba9c955c: Pull complete
+3c6456288dd3: Pull complete
+3d6019e95f0b: Pull complete
+5d9231d87964: Pull complete
+969034f82c57: Pull complete
+0f92df7564fd: Pull complete
+cda147eae49f: Pull complete
+7b8428dc5b68: Pull complete
+Digest: sha256:b08c5cf201bd708a599b1c686a9114c0231b759cb77bae873448a3acd34aeb13
+Status: Downloaded newer image for qwerty199369/nginx-php-mysql-redis:1.1.4
+docker.io/qwerty199369/nginx-php-mysql-redis:1.1.4
+```
 After an image has been downloaded, you can then run a container using the downloaded image with the ```run``` subcommand. As you saw with the ```hello-world``` example, if an image has not been downloaded when ```docker``` is executed with the ```run``` subcommand, the Docker client will first download the image, then run a container using it.
 
 To see the images that have been downloaded to your computer, type:
@@ -283,6 +312,10 @@ Output
 REPOSITORY          TAG                 IMAGE ID            CREATED             SIZE
 ubuntu              latest              1d622ef86b13        3 weeks ago         73.9MB
 hello-world         latest              bf756fb1ae65        4 months ago        13.3kB
+```
+This will show if you followed my lines
+```
+qwerty199369/nginx-php-mysql-redis   1.1.4     099d247497ad   6 years ago     3.01GB
 ```
 
 As you’ll see later in this tutorial, images that you use to run containers can be modified and used to generate new images, which may then be uploaded (_pushed_ is the technical term) to Docker Hub or other Docker registries.
@@ -308,6 +341,22 @@ Your command prompt should change to reflect the fact that you’re now working 
 Output
 root@d9b100f2f636:/#
 ```
+
+For me, it was
+```
+$ docker run -it 099d247497ad
+```
+
+It took sometime to get some output, but here what I got:
+```
+docker run -it 099d247497ad
+
+Starting MySQL (Percona Server)
+.. 
+
+```
+So, I cancelled, and followed the ubuntu one as provided. Will try with own image later.
+
 
 Note the container id in the command prompt. In this example, it is ```d9b100f2f636```. You’ll need that container ID later to identify the container when you want to remove it.
 
